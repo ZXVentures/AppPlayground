@@ -1,0 +1,111 @@
+{
+  "env": {
+    "node": true,
+    "mocha": true,
+    "browser": true,
+    "es6": true
+  },
+  "extends": "standard",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-native",
+    "flowtype"
+  ],
+  "globals": {
+    "gql": true,
+    "ga": true,
+    "describe": true,
+    "it": true,
+    "test": true,
+    "expect": true,
+    "jest": true,
+    "__DEV__": true
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "space-before-function-paren": 0,
+    "react/jsx-uses-vars": 1,
+    "react/react-in-jsx-scope": 1,
+    "flowtype/boolean-style": [
+      2,
+      "bool"
+    ],
+    "flowtype/define-flow-type": 1,
+    "flowtype/delimiter-dangle": [
+      2,
+      "never"
+    ],
+    "flowtype/generic-spacing": [
+      2,
+      "never"
+    ],
+    "flowtype/no-primitive-constructor-types": 2,
+    "flowtype/no-weak-types": 0,
+    "flowtype/object-type-delimiter": [
+      2,
+      "comma"
+    ],
+    "flowtype/require-parameter-type": 1,
+    "flowtype/require-return-type": [
+      1,
+      "always",
+      { "annotateUndefined": "never" }
+    ],
+    "flowtype/require-valid-file-annotation": [
+      1,
+      "none"
+    ],
+    "flowtype/semi": [
+      2,
+      "always"
+    ],
+    "flowtype/space-after-type-colon": [
+      2,
+      "always"
+    ],
+    "flowtype/space-before-generic-bracket": [
+      2,
+      "never"
+    ],
+    "flowtype/space-before-type-colon": [
+      2,
+      "never"
+    ],
+    "flowtype/type-id-match": 0,
+    "flowtype/union-intersection-spacing": [
+      2,
+      "always"
+    ],
+    "flowtype/use-flow-type": 1,
+    "flowtype/valid-syntax": 1
+  },
+  "settings": {
+    "onlyFilesWithFlowAnnotation": true,
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
+  }
+}
