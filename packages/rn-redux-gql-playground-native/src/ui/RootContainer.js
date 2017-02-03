@@ -5,7 +5,7 @@ import { NavigationExperimental, Platform, BackAndroid } from 'react-native'
 
 import { connect } from 'react-redux'
 
-import routes from './routes/routes'
+import scenes from './routes/scenes'
 
 import { pop } from '../redux/ducks/nav'
 
@@ -15,8 +15,7 @@ const {
 } = NavigationExperimental
 
 import type { // eslint-disable-line no-duplicate-imports
-  NavigationSceneRendererProps,
-  SubNavProps
+  NavigationSceneRendererProps
 } from 'react-native'
 
 import type {
@@ -29,6 +28,8 @@ type Props = {
   pop: () => () => void
 };
 
+const SEARCH_SCREEN_INDEX = 0
+
 export class RootContainer extends Component {
 
   props: Props
@@ -40,7 +41,7 @@ export class RootContainer extends Component {
     if (Platform.OS === 'android') {
       BackAndroid.addEventListener('hardwareBackPress', (): bool => {
         const { navState, pop } = this.props
-        if (navState.index !== 0) {
+        if (navState.index !== SEARCH_SCREEN_INDEX) {
           pop()
           return true
         }
@@ -51,7 +52,11 @@ export class RootContainer extends Component {
 
   render(): React$Element<any> {
     const { navState, pop } = this.props
-    console.log(navState.pushDirection)
+    const currentRoute = navState.routes[navState.index]
+
+    // Used to bypass flow
+    const sceneInterpolator: mixed = (currentRoute.interpolator) ? currentRoute.interpolator.scene : undefined
+
     return (
       <NavigationCardStack
         navigationState={navState}
@@ -60,34 +65,29 @@ export class RootContainer extends Component {
         direction={navState.pushDirection}
         renderHeader={this._renderHeader.bind(this)}
         renderScene={this._renderScene.bind(this)}
+        cardStyleInterpolator={sceneInterpolator}
       />
     )
   }
 
   _renderHeader(navProps: NavigationSceneRendererProps): React$Element<any> {
     const { navState, pop } = this.props
-    const currentRoute = navState.routes[navState.index]
+
+    const index = navState.index
+    const currentRoute = navState.routes[index]
 
     return (
-      <NavigationHeader
-        {...navProps}
+      <NavigationHeader {...navProps}
         onNavigateBack={pop}
-        renderTitleComponent={this._renderHeaderTitle.bind(this)}
-        renderLeftComponent={currentRoute.leftNavRenderer} // undefined triggers default :)
+        renderLeftComponent={currentRoute.leftNavRenderer}
         renderRightComponent={currentRoute.rightNavRenderer}
       />
     )
-  }
-
-  _renderHeaderTitle(props: SubNavProps): React$Element<any> {
-    const { navState } = this.props
-    const currentRoute = navState.routes[navState.index]
-
-    return (<NavigationHeader.Title>{currentRoute.title}</NavigationHeader.Title>)
+    // titleStyleInterpolator={navState.headerInterpolator}
   }
 
   _renderScene(navProps: NavigationSceneRendererProps): React$Element<any> {
-    return routes.asScenes[navProps.scene.route.key]
+    return scenes[navProps.scene.route.key]
   }
 }
 

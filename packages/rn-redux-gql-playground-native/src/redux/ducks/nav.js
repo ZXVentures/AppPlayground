@@ -5,18 +5,23 @@ import routes from '../../ui/routes/routes'
 import type {
   Route,
   NavState,
-  Action
+  Action,
+  Interpolator
 } from '../../types'
 
-import { DIRECTION_HORIZONTAL, directionByPush } from '../../ui/routes/pushConstants'
+import { HORIZONTAL, directionByPush } from '../../ui/routes/constants'
 
 export const PUSH_ROUTE = 'PUSH'
 export const POP_ROUTE = 'POP'
 
 const initialState = {
   index: 0,
-  routes: [routes.home],
-  pushDirection: DIRECTION_HORIZONTAL
+  pushDirection: HORIZONTAL,
+  routes: [routes.home]
+}
+
+const headerInterpolator = (route: Route): ?Interpolator => {
+  return (route.interpolator) ? route.interpolator.header : undefined
 }
 
 export default (state: NavState = initialState, action: Action = {}): NavState => {
@@ -29,11 +34,12 @@ export default (state: NavState = initialState, action: Action = {}): NavState =
     const routes = state.routes.slice()
     routes.push(route)
 
+    console.log(routes)
     return {
-      ...state,
       index: routes.length - 1,
       routes,
-      pushDirection: directionByPush[route.pushType]
+      pushDirection: directionByPush[route.pushType],
+      headerInterpolator: headerInterpolator(route)
     }
 
   case POP_ROUTE:
@@ -41,25 +47,28 @@ export default (state: NavState = initialState, action: Action = {}): NavState =
     // es lint is complaining, so humoring it
     const popRoutes = state.routes
     const lastRoute = popRoutes.pop()
+    console.log(popRoutes)
     return {
-      ...state,
       index: popRoutes.length - 1,
       routes: popRoutes,
-      pushDirection: directionByPush[lastRoute.pushType]
+      pushDirection: directionByPush[lastRoute.pushType],
+      headerInterpolator: headerInterpolator(lastRoute)
     }
 
   default:
     return state
-
   }
 }
 
-// eslint-disable-next-line no-unused-vars
 const push = (route: Route): Action => {
   return {
     type: PUSH_ROUTE,
     payload: { route: route }
   }
 }
+
+export const showLeft = (): Action => push(routes.left)
+
+export const showRight = (): Action => push(routes.right)
 
 export const pop = (): Action => { return { type: POP_ROUTE } }

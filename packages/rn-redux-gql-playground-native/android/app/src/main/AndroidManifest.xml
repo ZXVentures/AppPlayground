@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.playgroundapp"
+    package="com.@zxventures/rn-redux-gql-playground-native"
     android:versionCode="1"
     android:versionName="1.0">
 

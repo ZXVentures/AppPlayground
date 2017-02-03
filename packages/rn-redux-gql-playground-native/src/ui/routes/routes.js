@@ -1,25 +1,41 @@
 /* @flow */
 
-import React from 'react' // eslint-disable-line no-unused-vars
+import React, { Component } from 'react' // eslint-disable-line no-unused-vars
 
-import Home from '../scenes/Home'
-import { DEFAULT_PUSH } from './pushConstants'
+import {
+  DEFAULT,
+  HOME,
+  LEFT,
+  RIGHT
+} from './constants'
 
-export const HOME_KEY = 'home'
-export const DEBUG_KEY = 'debug'
-export const USER_PROFILE_KEY = 'userProfile'
+import leftHorizontal from './interpolators/leftHorizontal'
 
-const routes = {
-  home: {
-    key: HOME_KEY,
-    title: 'Home',
-    pushType: DEFAULT_PUSH
-  }
+import NavButton from '../partials/common/NavButton'
+
+const button = (title: string): () => React$Element<any> => {
+  return (): React$Element<any> => (<NavButton title={title} />)
 }
 
 export default {
-  ...routes,
-  asScenes: {
-    [HOME_KEY]: <Home />
+  home: {
+    key: HOME,
+    title: HOME,
+    pushType: DEFAULT,
+    leftNavRenderer: button(LEFT),
+    rightNavRenderer: button(RIGHT)
+  },
+  left: {
+    key: LEFT,
+    title: LEFT,
+    pushType: DEFAULT,
+    leftNavRenderer: (): null => { return null },
+    rightNavRenderer: button(HOME),
+    interpolator: leftHorizontal
+  },
+  right: {
+    key: RIGHT,
+    title: RIGHT,
+    pushType: DEFAULT
   }
 }

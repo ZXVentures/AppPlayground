@@ -1,5 +1,7 @@
 /* @flow */
 
+import type { NavigationSceneRendererProps } from 'react-native'
+
 import React from 'react' // eslint-disable-line no-unused-vars
 
 import {
@@ -12,7 +14,12 @@ import {
   DEFAULT_PUSH,
   DIRECTION_VERTICAL,
   DIRECTION_HORIZONTAL
-} from './ui/routes/pushConstants'
+} from './ui/routes/constants'
+
+import {
+  SCENE,
+  HEADER
+} from './ui/routes/interpolators/constants'
 
 import { REHYDRATE } from 'redux-persist/constants'
 
@@ -21,6 +28,14 @@ export type SubNavProps = {
 };
 
 export type SubNavRenderer = (navProps: SubNavProps) => ?React$Element<any>;
+
+export type InterpolatorType = SCENE | HEADER;
+
+export type Interpolator= (props: NavigationSceneRendererProps) => Object;
+
+export type NavInterpolator = {
+  [key: InterpolatorType]: Interpolator
+};
 
 export type NavPushType = MODAL_PUSH | DEFAULT_PUSH;
 
@@ -33,13 +48,15 @@ export type Route = {
   title: string,
   pushType: NavPushType,
   rightNavRenderer?: SubNavRenderer,
-  leftNavRenderer?: SubNavRenderer
+  leftNavRenderer?: SubNavRenderer,
+  interpolator?: NavInterpolator
 };
 
 export type NavState = {
   index: number,
   routes: Route[],
-  pushDirection: PushDirection
+  pushDirection: PushDirection,
+  headerInterpolator?: Interpolator
 };
 
 export type ConfigState = {
