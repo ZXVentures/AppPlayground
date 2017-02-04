@@ -9,6 +9,8 @@ import scenes from './routes/scenes'
 
 import { pop } from '../redux/ducks/nav'
 
+import NavigationHeaderInterpolatable from './custom/NavigationHeaderInterpolatable'
+
 const {
   CardStack: NavigationCardStack,
   Header: NavigationHeader
@@ -76,14 +78,21 @@ export class RootContainer extends Component {
     const index = navState.index
     const currentRoute = navState.routes[index]
 
-    return (
-      <NavigationHeader {...navProps}
-        onNavigateBack={pop}
-        renderLeftComponent={currentRoute.leftNavRenderer}
-        renderRightComponent={currentRoute.rightNavRenderer}
-      />
-    )
-    // titleStyleInterpolator={navState.headerInterpolator}
+    const sharedProps = {
+      ...navProps,
+      onNavigateBack: pop,
+      renderLeftComponent: currentRoute.leftNavRenderer,
+      renderRightComponent: currentRoute.rightNavRenderer
+    }
+
+    if (navState.headerInterpolator) {
+      return (
+        <NavigationHeaderInterpolatable
+          {...sharedProps}
+          titleInterpolator={navState.headerInterpolator}
+        />
+      )
+    } else { return (<NavigationHeader {...sharedProps} />) }
   }
 
   _renderScene(navProps: NavigationSceneRendererProps): React$Element<any> {
