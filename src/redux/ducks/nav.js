@@ -68,7 +68,7 @@ const push = (route: Route): Action => {
 }
 
 export const showLeft = (): Action => push(routes.left)
-
 export const showRight = (): Action => push(routes.right)
+export const showModal = (): Action => push(routes.modal)
 
 export const pop = (): Action => { return { type: POP_ROUTE } }

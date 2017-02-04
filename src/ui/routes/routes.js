@@ -6,6 +6,8 @@ import {
   DEFAULT,
   HOME,
   LEFT,
+  MODAL,
+  MODAL_TITLE,
   RIGHT
 } from './constants'
 
@@ -32,6 +34,11 @@ export default {
     leftNavRenderer: (): null => { return null },
     rightNavRenderer: button(HOME),
     interpolator: leftHorizontal
+  },
+  modal: {
+    key: MODAL_TITLE,
+    title: MODAL_TITLE,
+    pushType: MODAL
   },
   right: {
     key: RIGHT,

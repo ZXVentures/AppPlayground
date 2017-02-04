@@ -6,6 +6,7 @@ export const HORIZONTAL = 'horizontal'
 
 export const HOME = 'Home'
 export const LEFT = 'Left'
+export const MODAL_TITLE = 'Modal'
 export const RIGHT = 'Right'
 
 export const directionByPush = {
