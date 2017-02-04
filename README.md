@@ -2,6 +2,8 @@
 
 Boilerplate for a [React Native](https://facebook.github.io/react-native/) project using [Redux](http://redux.js.org/) for state and [GraphQL (Apollo)](http://dev.apollodata.com/react/react-native.html) for network requests.
 
+![NAVIGATION_DEMO](https://thumbs.gfycat.com/ComplexImpoliteAustraliansilkyterrier-size_restricted.gif)
+
 ### Goals
 
 * Provide a quick prototyping environment for React Native apps with similar architectures.
