@@ -61,6 +61,7 @@ export class RootContainer extends Component {
 
     return (
       <NavigationCardStack
+        enableGestures={false}
         navigationState={navState}
         onNavigateBack={pop}
         style={{ flex: 1 }}

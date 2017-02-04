@@ -2,8 +2,6 @@
 
 Boilerplate for a [React Native](https://facebook.github.io/react-native/) project using [Redux](http://redux.js.org/) for state and [GraphQL (Apollo)](http://dev.apollodata.com/react/react-native.html) for network requests.
 
-This project will also have AWS Lambda endpoints to fetch mock data from. Additionally we will include the ability to modify the GraphQL schema and deploy your own Lambda instances using the [Serverless Framework](https://serverless.com/).
-
 ### Goals
 
 * Provide a quick prototyping environment for React Native apps with similar architectures.
@@ -12,7 +10,6 @@ This project will also have AWS Lambda endpoints to fetch mock data from. Additi
 ### Core Technology Choices & Patterns
 
 * [React Native](https://facebook.github.io/react-native/)
-* [Serverless](https://serverless.com/)
 * [Redux](http://redux.js.org/)
 * [Apollo](http://dev.apollodata.com/)
 * [Jest](https://facebook.github.io/jest/)
@@ -38,7 +35,3 @@ This project will also have AWS Lambda endpoints to fetch mock data from. Additi
   * Run the React Native Packager: `react-native start`.
   * Run iOS with `yarn run ios`.
   * Run Android with `yarn run android`.
-
-### Upcoming
-
-* We will soon include a base endpoint for GraphQL requests with a base mock data set. We are currently waiting for [this issue](https://github.com/apollostack/graphql-server/pull/247) to be merged into the [graphql-server](https://github.com/apollostack/graphql-server) project.

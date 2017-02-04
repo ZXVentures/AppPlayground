@@ -28,9 +28,6 @@ export default class Home extends Component {
             <TouchableOpacity onPress={this.props.showModal}>
               <Text style={styles.button}>Modal</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={this.props.showTableView}>
-              <Text style={styles.button}>Table View</Text>
-            </TouchableOpacity>
           </View>
         </View>
       </View>
