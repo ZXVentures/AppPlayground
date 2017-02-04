@@ -20,10 +20,6 @@ const initialState = {
   routes: [routes.home]
 }
 
-const headerInterpolator = (route: Route): ?Interpolator => {
-  return (route.interpolator) ? route.interpolator.header : undefined
-}
-
 export default (state: NavState = initialState, action: Action = {}): NavState => {
   if (!action.type) return state
 
@@ -39,7 +35,7 @@ export default (state: NavState = initialState, action: Action = {}): NavState =
       index: routes.length - 1,
       routes,
       pushDirection: directionByPush[route.pushType],
-      headerInterpolator: headerInterpolator(route)
+      interpolator: route.interpolator
     }
 
   case POP_ROUTE:
@@ -52,7 +48,7 @@ export default (state: NavState = initialState, action: Action = {}): NavState =
       index: popRoutes.length - 1,
       routes: popRoutes,
       pushDirection: directionByPush[lastRoute.pushType],
-      headerInterpolator: headerInterpolator(lastRoute)
+      interpolator: lastRoute.interpolator
     }
 
   default:

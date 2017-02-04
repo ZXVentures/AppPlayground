@@ -57,7 +57,7 @@ export class RootContainer extends Component {
     const currentRoute = navState.routes[navState.index]
 
     // Used to bypass flow
-    const sceneInterpolator: mixed = (currentRoute.interpolator) ? currentRoute.interpolator.scene : undefined
+    const sceneInterpolator: mixed = (navState.interpolator) ? navState.interpolator.scene : undefined
 
     return (
       <NavigationCardStack
@@ -86,11 +86,11 @@ export class RootContainer extends Component {
       renderRightComponent: currentRoute.rightNavRenderer
     }
 
-    if (navState.headerInterpolator) {
+    if (navState.interpolator && navState.interpolator.header) {
       return (
         <NavigationHeaderInterpolatable
           {...sharedProps}
-          titleInterpolator={navState.headerInterpolator}
+          titleInterpolator={navState.interpolator.header}
         />
       )
     } else { return (<NavigationHeader {...sharedProps} />) }

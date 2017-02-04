@@ -56,7 +56,7 @@ export type NavState = {
   index: number,
   routes: Route[],
   pushDirection: PushDirection,
-  headerInterpolator?: Interpolator
+  interpolator?: NavInterpolator
 };
 
 export type ConfigState = {
