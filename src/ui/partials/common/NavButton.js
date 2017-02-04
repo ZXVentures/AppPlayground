@@ -1,11 +1,15 @@
 import React, { React$Element, Component } from 'react' // eslint-disable-line no-unused-vars
 
-import { TouchableHighlight, Text } from 'react-native'
+import { TouchableHighlight } from 'react-native'
 
 import { LEFT, RIGHT } from '../../routes/constants'
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 export class NavButton extends Component {
   render(): React$Element {
+    const iconName = (this.props.title === LEFT) ? 'bars' : 'globe'
+
     return (
       <TouchableHighlight style={{
         flex: 1,
@@ -14,10 +18,10 @@ export class NavButton extends Component {
         padding: 10
       }}
         onPress={this._onPress.bind(this)}>
-        <Text style={{
-          fontSize: 16,
-          fontWeight: '400'
-        }}>{this.props.title}</Text>
+        <Icon name={iconName}
+          size={24}
+          color={'#64b5f6'}
+        />
       </TouchableHighlight>
     )
   }
