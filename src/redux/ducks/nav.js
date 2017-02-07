@@ -28,7 +28,6 @@ export default (state: NavState = initialState, action: Action = {}): NavState =
     const routes = state.routes.slice()
     routes.push(route)
 
-    console.log(routes)
     return {
       index: routes.length - 1,
       routes,
@@ -41,7 +40,7 @@ export default (state: NavState = initialState, action: Action = {}): NavState =
     // es lint is complaining, so humoring it
     const popRoutes = state.routes
     const lastRoute = popRoutes.pop()
-    console.log(popRoutes)
+
     return {
       index: popRoutes.length - 1,
       routes: popRoutes,
