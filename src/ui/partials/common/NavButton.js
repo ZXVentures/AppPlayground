@@ -4,7 +4,7 @@ import { TouchableHighlight } from 'react-native'
 
 import { LEFT, RIGHT } from '../../routes/constants'
 
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 export class NavButton extends Component {
   render(): React$Element {

@@ -54,7 +54,6 @@ export class RootContainer extends Component {
 
   render(): React$Element<any> {
     const { navState, pop } = this.props
-    const currentRoute = navState.routes[navState.index]
 
     // Used to bypass flow
     const sceneInterpolator: mixed = (navState.interpolator) ? navState.interpolator.scene : undefined

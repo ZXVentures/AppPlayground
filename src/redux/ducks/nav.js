@@ -5,8 +5,7 @@ import routes from '../../ui/routes/routes'
 import type {
   Route,
   NavState,
-  Action,
-  Interpolator
+  Action
 } from '../../types'
 
 import { HORIZONTAL, directionByPush } from '../../ui/routes/constants'
