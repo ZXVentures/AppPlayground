@@ -11,8 +11,7 @@ import type {
 
 import { HORIZONTAL, directionByPush } from '../../ui/routes/constants'
 
-export const PUSH_ROUTE = 'PUSH'
-export const POP_ROUTE = 'POP'
+import { PUSH_ROUTE, POP_ROUTE } from './constants'
 
 const initialState = {
   index: 0,
