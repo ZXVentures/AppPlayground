@@ -1,13 +1,32 @@
-## React Native, Redux, GraphQL Playground
+## AppPlayground
 
-Boilerplate for a [React Native](https://facebook.github.io/react-native/) project using [Redux](http://redux.js.org/) for state and [GraphQL (Apollo)](http://dev.apollodata.com/react/react-native.html) for network requests.
+##### React Native & Redux Boilerplate ([GraphQL](http://dev.apollodata.com/react/react-native.html) coming soon)
 
-![NAVIGATION_DEMO](https://thumbs.gfycat.com/DecimalMeanGonolek-size_restricted.gif)
+Boilerplate for a [React Native](https://facebook.github.io/react-native/) project using [Redux](http://redux.js.org/) for state management.
+
+This project also includes multidirectional UI with [NavigationExperimental](https://github.com/facebook/react-native/tree/master/Libraries/NavigationExperimental):
+
+<center>![NAVIGATION_DEMO](https://thumbs.gfycat.com/DecimalMeanGonolek-size_restricted.gif)</center>
 
 ### Goals
 
 * Provide a quick prototyping environment for React Native apps with similar architectures.
 * Demonstrate React Native, Redux, and GraphQL in common use cases and tests.
+
+### Milestones
+
+#### v1.0 Milestones
+
+* [x] Initial redux integration
+* [x] Multidirectional UI with Redux
+* [ ] GraphQL integration
+* [ ] ListView example with GraphQL
+
+#### v2.0 Milestones
+
+* [ ] Epics with redux observable
+* [ ] Caching with GraphQL, Redux, and redux-persist
+* [ ] Configurable server for prototyping new data types
 
 ### Core Technology Choices & Patterns
 
@@ -31,9 +50,14 @@ Boilerplate for a [React Native](https://facebook.github.io/react-native/) proje
 
 ### Getting Started
 
-* Currently you can run the React Native project on Android and iOS.
-  * Begin by navigating to the `rn-redux-gql-playground-native` directory.
-  * Run `yarn install` to install the project directory.
-  * Run the React Native Packager: `react-native start`.
+* Run `yarn install` to install dependencies in the project directory.
+* Run the React Native Packager: `react-native start`.
+* Ensure you have started your Android simulator.
+* Run both platforms with `npm start`
+* Or run them individually:
   * Run iOS with `yarn run ios`.
   * Run Android with `yarn run android`.
+
+### Running Tests
+
+* To run tests run `npm test`
