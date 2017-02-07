@@ -1,0 +1,11 @@
+exports[`ui/scenes/Modal snapshot test 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#0091ea",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  } />
+`;

@@ -1,0 +1,11 @@
+exports[`ui/scenes/Right snapshot test 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#00b8d4",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  } />
+`;

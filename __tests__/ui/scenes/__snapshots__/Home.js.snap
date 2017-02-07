@@ -1,0 +1,106 @@
+exports[`ui/scenes/Home snapshot test 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#F5FCFF",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 24,
+        "margin": 10,
+        "marginBottom": 20,
+        "textAlign": "center",
+      }
+    }>
+    Welcome to AppPlayground!
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#333333",
+        "marginBottom": 5,
+        "textAlign": "center",
+      }
+    }>
+    This React Native Boilerplate provides Redux, GraphQL through Apollo, Navigation, and a Test Suite.
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#333333",
+        "marginBottom": 5,
+        "textAlign": "center",
+      }
+    }>
+    Double tap R on your keyboard to reload,
+    
+    
+    Shake or press menu button for dev menu
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 50,
+        "marginTop": 20,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 18,
+              "fontWeight": "500",
+              "marginHorizontal": 10,
+            }
+          }>
+          Modal
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
