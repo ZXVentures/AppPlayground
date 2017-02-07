@@ -38,7 +38,7 @@ export class NavButton extends Component {
 import { showLeft, showRight, pop } from '../../../redux/ducks/nav'
 import { connect } from 'react-redux'
 
-const mapDispatchToProps = (dispatch: Function): Object => ({
+export const mapDispatchToProps = (dispatch: Function): Object => ({
   showLeft: (): void => dispatch(showLeft()),
   showRight: (): void => dispatch(showRight()),
   pop: (): void => dispatch(pop())
