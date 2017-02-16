@@ -8,7 +8,7 @@ const { Header: NavigationHeader } = NavigationExperimental
 export default class NavigationHeaderInterpolatable extends NavigationHeader {
 
   _renderTitle = (props: NavigationSceneRendererProps): ?React.Element<any> => {
-    // $FlowSuppressError
+    // $FlowIssue
     return this._renderSubView(
       props,
       'title',

@@ -3245,13 +3245,13 @@ mime-db@~1.23.0:
   version "1.23.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.23.0.tgz#a31b4070adaea27d732ea333740a64d0ec9a6659"
 
-mime-types@2.1.11, mime-types@~2.1.7, mime-types@~2.1.9:
+mime-types@2.1.11, mime-types@~2.1.7:
   version "2.1.11"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.11.tgz#c259c471bda808a85d6cd193b430a5fae4473b3c"
   dependencies:
     mime-db "~1.23.0"
 
-mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.13, mime-types@~2.1.6:
+mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.13, mime-types@~2.1.6, mime-types@~2.1.9:
   version "2.1.14"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.14.tgz#f7ef7d97583fcaf3b7d282b6f8b5679dab1e94ee"
   dependencies:
@@ -3758,9 +3758,9 @@ react-native-vector-icons@^4.0.0:
     lodash "^4.0.0"
     yargs "^6.3.0"
 
-react-native@0.41.0-rc.1:
-  version "0.41.0-rc.1"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.41.0-rc.1.tgz#f9870b8b1abaa3a572b86975b0d422c3edf14cf4"
+react-native@0.42.0-rc.3:
+  version "0.42.0-rc.3"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.42.0-rc.3.tgz#97f852086ac6ed2e4ad2d43a96203cc3761f6a4b"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"

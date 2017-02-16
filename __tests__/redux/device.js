@@ -1,5 +1,6 @@
 /* @flow */
 
+// $FlowIssue
 import reducer from 'redux/ducks/device'
 
 describe('reducer tests', () => {
