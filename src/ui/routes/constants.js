@@ -1,12 +1,9 @@
-export const MODAL = 'MODAL'
-export const DEFAULT = 'DEFAULT'
-
 export const VERTICAL = 'vertical'
 export const HORIZONTAL = 'horizontal'
 
 export const HOME = 'Home'
 export const LEFT = 'Left'
-export const MODAL_TITLE = 'Modal'
+export const MODAL = 'Modal'
 export const RIGHT = 'Right'
 
 export const directionByPush = {

@@ -1,5 +1,5 @@
-// flow-typed signature: 16c00f089e1856fd9988a45242bb927f
-// flow-typed version: /redux_v3.x.x/flow_>=v0.33.x
+// flow-typed signature: ba132c96664f1a05288f3eb2272a3c35
+// flow-typed version: c4bbd91cfc/redux_v3.x.x/flow_>=v0.33.x
 
 declare module 'redux' {
 

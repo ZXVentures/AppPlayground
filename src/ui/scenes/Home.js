@@ -8,7 +8,7 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-export class Home extends Component {
+export default class Home extends Component {
 
   render(): React$Element<any> {
     return (
@@ -35,14 +35,14 @@ export class Home extends Component {
   }
 }
 
-import { showModal } from '../../redux/ducks/nav'
-
-export const mapDispatchToProps = (dispatch: Function): Object => ({
-  showModal: (): void => dispatch(showModal())
-})
-
-import { connect } from 'react-redux'
-export default connect(null, mapDispatchToProps)(Home)
+// import { showModal } from '../../redux/ducks/nav'
+//
+// export const mapDispatchToProps = (dispatch: Function): Object => ({
+//   showModal: (): void => dispatch(showModal())
+// })
+//
+// import { connect } from 'react-redux'
+// export default connect(null, mapDispatchToProps)(Home)
 
 const styles = StyleSheet.create({
   container: {
