@@ -67,7 +67,7 @@ const persistConfig = {
   keyPrefix: `${APP_REDUX_KEY}`,
   storage: AsyncStorage
 }
-persistStore(store, persistConfig).purge()
+persistStore(store, persistConfig)
 
 const AppPlayground = (): React$Element<any> => (
   <Root store={store} client={client} />
