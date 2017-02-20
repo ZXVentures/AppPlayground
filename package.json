@@ -28,6 +28,7 @@
     "react-apollo": "^0.7.2",
     "react-native": "0.42.0-rc.3",
     "react-native-vector-icons": "^4.0.0",
+    "react-navigation": "^1.0.0-beta.5",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "redux-observable": "^0.12.2",

@@ -8,7 +8,23 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-export class Home extends Component {
+import IconButton from '../partials/common/IconButton'
+
+export default class Home extends Component {
+
+  static navigationOptions = {
+    title: 'Home', // TODO: Localization
+    header: ({ navigate }: Object): Object => {
+      return {
+        right: <IconButton icon={'bars'}
+          onPress={(): void => navigate('Right')}
+        />,
+        left: <IconButton icon={'globe'}
+          onPress={(): void => navigate('Left')}
+        />
+      }
+    }
+  }
 
   render(): React$Element<any> {
     return (
@@ -25,7 +41,7 @@ export class Home extends Component {
         </Text>
         <View style={styles.buttonContainer}>
           <View style={styles.buttonRow}>
-            <TouchableOpacity onPress={this.props.showModal}>
+            <TouchableOpacity onPress={this._showModal.bind(this)}>
               <Text style={styles.button}>Modal</Text>
             </TouchableOpacity>
           </View>
@@ -33,16 +49,20 @@ export class Home extends Component {
       </View>
     )
   }
+
+  _showModal() {
+    this.props.navigation.navigate('Modal')
+  }
 }
 
-import { showModal } from '../../redux/ducks/nav'
-
-export const mapDispatchToProps = (dispatch: Function): Object => ({
-  showModal: (): void => dispatch(showModal())
-})
-
-import { connect } from 'react-redux'
-export default connect(null, mapDispatchToProps)(Home)
+// import { showModal } from '../../redux/ducks/nav'
+//
+// export const mapDispatchToProps = (dispatch: Function): Object => ({
+//   showModal: (): void => dispatch(showModal())
+// })
+//
+// import { connect } from 'react-redux'
+// export default connect(null, mapDispatchToProps)(Home)
 
 const styles = StyleSheet.create({
   container: {

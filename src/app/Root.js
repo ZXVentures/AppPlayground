@@ -8,7 +8,7 @@ import { Provider as ReduxProvider } from 'react-redux'
 import { ApolloProvider } from 'react-apollo'
 
 // Routing Container
-import RootContainer from '../ui/RootContainer'
+import RootComponent from '../ui/Root'
 
 // Permissions
 // import Permissions from 'react-native-permissions'
@@ -22,7 +22,7 @@ export default class Root extends Component {
     return (
       <ApolloProvider store={store} client={client}>
         <ReduxProvider store={store}>
-          <RootContainer />
+          <RootComponent />
         </ReduxProvider>
       </ApolloProvider>
     )

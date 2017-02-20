@@ -8,6 +8,10 @@ import {
 
 export default class Left extends Component {
 
+  static navigationOptions = {
+    title: 'Right' // TODO: Localization
+  }
+
   render(): React$Element<any> {
     return (
       <View style={styles.container}></View>
