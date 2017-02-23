@@ -1,6 +1,7 @@
 /* @flow */
 
 import type { NavState } from './nav'
+import type { IntlState } from './intl'
 
 export type ConfigState = {
   appName: string,
@@ -15,6 +16,7 @@ export type DeviceState = {
 export type NativeState = {
   config: ConfigState,
   device: DeviceState,
+  intl: IntlState,
   apollo: Object,
   error: ?Object,
   nav: NavState

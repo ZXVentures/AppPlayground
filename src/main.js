@@ -7,7 +7,7 @@ import { AppRegistry, AsyncStorage, Platform } from 'react-native'
 // Redux
 import { createStore, compose } from 'redux'
 import { persistStore, autoRehydrate } from 'redux-persist'
-import initialState from './redux/initialState'
+import { initialState, makeReducer } from './redux/initial'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 import {
@@ -15,10 +15,6 @@ import {
   APP_REDUX_KEY,
   APP_VERSION
 } from './constants'
-
-// Reducers & Epics
-import makeReducer from './redux/makeReducer'
-// TODO: Compine epics export
 
 // Apollo Client
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
@@ -30,6 +26,11 @@ const networkInterface = createNetworkInterface({
 const client = new ApolloClient({
   networkInterface: networkInterface
 })
+
+console.log(client)
+
+// Internationalization
+import Locale from 'react-native-locale'
 
 // Root
 import Root from './app/Root'
@@ -46,6 +47,10 @@ const nativeInitialState = {
     ...initialState.device,
     isReactNative: true,
     platform: Platform.OS
+  },
+  intl: {
+    ...initialState.intl,
+    currentLocale: Locale.constants().collatorIdentifier
   },
   apollo: client.reducer()()
 }

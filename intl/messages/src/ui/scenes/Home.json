@@ -1,0 +1,18 @@
+[
+  {
+    "id": "home.welcome",
+    "defaultMessage": "Welcome to AppPlayground!"
+  },
+  {
+    "id": "home.intro",
+    "defaultMessage": "This React Native Boilerplate provides Redux, GraphQL through Apollo, Navigation, and a Test Suite."
+  },
+  {
+    "id": "home.debugInstructions",
+    "defaultMessage": "Double tap R on your keyboard to reload,\n\n          Shake or press menu button for dev menu"
+  },
+  {
+    "id": "home.modal",
+    "defaultMessage": "Modal"
+  }
+]

@@ -4,8 +4,8 @@ import React from 'react' // eslint-disable-line no-unused-vars
 import type { NavigationSceneRendererProps } from 'react-native'
 
 import {
-  PUSH_ROUTE,
-  POP_ROUTE
+  PUSH,
+  POP
 } from '../redux/ducks/constants'
 
 import {
@@ -36,7 +36,7 @@ export type NavInterpolator = {
 
 export type NavPushType = MODAL | DEFAULT;
 
-export type RouteType = PUSH_ROUTE | POP_ROUTE;
+export type RouteType = PUSH | POP;
 
 export type PushDirection = VERTICAL | HORIZONTAL;
 

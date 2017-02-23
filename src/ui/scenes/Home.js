@@ -8,25 +8,35 @@ import {
   TouchableOpacity
 } from 'react-native'
 
+import { FormattedMessage } from 'react-intl'
+
+import { text } from '../factories/intl'
+
 export class Home extends Component {
 
   render(): React$Element<any> {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to AppPlayground!
-        </Text>
-        <Text style={styles.body}>
-          This React Native Boilerplate provides Redux, GraphQL through Apollo, Navigation, and a Test Suite.
-        </Text>
-        <Text style={styles.body}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <FormattedMessage id={'home.welcome'}
+          defaultMessage={'Welcome to AppPlayground!'}>
+            {text(styles.welcome)}
+        </FormattedMessage>
+        <FormattedMessage id={'home.intro'}
+          defaultMessage={'This React Native Boilerplate provides Redux, GraphQL through Apollo, Navigation, and a Test Suite.'}>
+            {text(styles.body)}
+        </FormattedMessage>
+        <FormattedMessage id={'home.debugInstructions'}
+          defaultMessage={`Double tap R on your keyboard to reload,\n
+          Shake or press menu button for dev menu`}>
+            {text(styles.body)}
+        </FormattedMessage>
         <View style={styles.buttonContainer}>
           <View style={styles.buttonRow}>
             <TouchableOpacity onPress={this.props.showModal}>
-              <Text style={styles.button}>Modal</Text>
+              <FormattedMessage id={'home.modal'}
+                defaultMessage={'Modal'}>
+                  {text(styles.button)}
+              </FormattedMessage>
             </TouchableOpacity>
           </View>
         </View>

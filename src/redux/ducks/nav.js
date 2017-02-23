@@ -10,7 +10,7 @@ import type {
 
 import { HORIZONTAL, directionByPush } from '../../ui/routes/constants'
 
-import { PUSH_ROUTE, POP_ROUTE } from './constants'
+import { PUSH, POP } from './constants'
 
 const initialState = {
   index: 0,
@@ -23,7 +23,7 @@ export default (state: NavState = initialState, action: Action = {}): NavState =
 
   switch (action.type) {
 
-  case PUSH_ROUTE:
+  case PUSH:
     const route = action.payload.route
     const routes = state.routes.slice()
     routes.push(route)
@@ -35,7 +35,7 @@ export default (state: NavState = initialState, action: Action = {}): NavState =
       interpolator: route.interpolator
     }
 
-  case POP_ROUTE:
+  case POP:
     if (state.index <= 0) { return state }
     // es lint is complaining, so humoring it
     const popRoutes = state.routes
@@ -55,7 +55,7 @@ export default (state: NavState = initialState, action: Action = {}): NavState =
 
 const push = (route: Route): Action => {
   return {
-    type: PUSH_ROUTE,
+    type: PUSH,
     payload: { route: route }
   }
 }
@@ -64,4 +64,4 @@ export const showLeft = (): Action => push(routes.left)
 export const showRight = (): Action => push(routes.right)
 export const showModal = (): Action => push(routes.modal)
 
-export const pop = (): Action => { return { type: POP_ROUTE } }
+export const pop = (): Action => { return { type: POP } }

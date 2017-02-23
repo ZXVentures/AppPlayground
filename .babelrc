@@ -1,3 +1,13 @@
 {
-  "presets": ["react-native"]
+  "presets": [
+    "react-native"
+  ],
+  "plugins": [
+    [
+      "react-intl", {
+        "messagesDir": "./intl/messages",
+        "enforceDescriptions": false
+      }
+    ]
+  ]
 }
