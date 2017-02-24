@@ -19,12 +19,13 @@ This project also includes multidirectional UI with [NavigationExperimental](htt
 
 * [x] Initial redux integration
 * [x] Multidirectional UI with Redux
+* [x] i18n
 * [ ] GraphQL integration
 * [ ] ListView example with GraphQL
 
 #### v2.0 Milestones
 
-* [ ] Epics with redux observable
+* [x] Epics with redux observable
 * [ ] Caching with GraphQL, Redux, and redux-persist
 * [ ] Configurable server for prototyping new data types
 
@@ -36,6 +37,7 @@ This project also includes multidirectional UI with [NavigationExperimental](htt
 * [Jest](https://facebook.github.io/jest/)
 * [NavigationExperimental](https://github.com/facebook/react-native/tree/master/Libraries/NavigationExperimental)
 * [Ducks](https://github.com/erikras/ducks-modular-redux)
+* [React Intl](https://github.com/yahoo/react-intl)
 
 ### Installation
 
