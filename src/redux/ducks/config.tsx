@@ -1,6 +1,6 @@
 /* @flow */
 
-import type { ConfigState } from '../../types'
+import { ConfigState } from '../../types'
 
 const initialState = {
   appName: '',

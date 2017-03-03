@@ -1,6 +1,4 @@
-// Routing
-export const PUSH = '@appPlayground/routes/PUSH'
-export const POP = '@appPlayground/routes/POP'
+
 
 // Localization
 export const SET_LOCALE = '@ratebeer/intl/SET_LOCALE'

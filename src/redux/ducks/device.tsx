@@ -1,6 +1,8 @@
 /* @flow */
 
-import type { DeviceState } from '../../types'
+interface DeviceState {
+  isReactNative: boolean
+}
 
 const initialState = {
   isReactNative: false,

@@ -1,10 +1,10 @@
 /* @flow */
 
-export type IntlState = {
+export interface IntlState {
   defaultLocale: string,
   currentLocale: string,
   supportedLocales: SupportedLocale[],
-  isDirty: bool,
+  isDirty: boolean,
   messages: {
     [key: string]: {
       id: string,
