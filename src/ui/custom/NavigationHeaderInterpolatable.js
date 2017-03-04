@@ -1,5 +1,3 @@
-/* @flow */
-
 import React from 'react' // eslint-disable-line no-unused-vars
 import { NavigationExperimental } from 'react-native'
 import type { NavigationSceneRendererProps } from 'react-native' // eslint-disable-line no-duplicate-imports

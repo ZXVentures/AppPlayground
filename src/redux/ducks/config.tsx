@@ -1,6 +1,7 @@
-/* @flow */
-
-import type { ConfigState } from '../../types'
+export interface ConfigState {
+  appName: string,
+  appVersion: string
+}
 
 const initialState = {
   appName: '',

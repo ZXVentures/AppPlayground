@@ -1,5 +1,5 @@
-export const MODAL = 'MODAL'
-export const DEFAULT = 'DEFAULT'
+export const MODAL = 'modal'
+export const DEFAULT = 'default'
 
 export const VERTICAL = 'vertical'
 export const HORIZONTAL = 'horizontal'

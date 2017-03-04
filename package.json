@@ -11,7 +11,7 @@
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "ios": "react-native run-ios && yarn run build:strings",
     "install": "flow-typed update",
-    "lint": "eslint src __tests__",
+    "lint": "tslint",
     "lint:fix": "eslint --fix src __tests__",
     "start": "concurrently \"react-native run-ios\" \"ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk react-native run-android\" && yarn run build:strings",
     "test": "npm run lint && npm run test:jest-no-cache",
@@ -21,10 +21,18 @@
     "test:update-snapshots": "jest --coverage --no-cache -u"
   },
   "dependencies": {
+    "@types/graphql": "^0.8.6",
+    "@types/react": "^15.0.12",
+    "@types/react-intl": "^2.2.2",
+    "@types/react-native": "^0.37.13",
+    "@types/react-redux": "^4.4.36",
+    "@types/redux": "^3.6.0",
+    "@types/redux-persist": "^4.0.0",
     "apollo-client": "^0.5.25",
     "graphql": "^0.6.1",
     "graphql-tag": "^0.1.7",
     "graphql-tools": "^0.6.2",
+    "graphql-typings": "^0.0.1-beta-2",
     "react": "~15.4.0-rc.4",
     "react-apollo": "^0.7.2",
     "react-intl": "^2.2.3",
@@ -43,11 +51,9 @@
     "babel-core": "^6.8.0",
     "babel-eslint": "^6.1.0",
     "babel-jest": "18.0.0",
-    "babel-loader": "^6.2.4",
     "babel-plugin-react-intl": "^2.3.1",
     "babel-preset-react-native": "1.9.1",
     "concurrently": "^3.1.0",
-    "eslint": "^3.13.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-flowtype": "^2.29.1",
@@ -61,7 +67,9 @@
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-test-renderer": "15.4.1",
-    "redux-mock-store": "^1.2.1"
+    "redux-mock-store": "^1.2.1",
+    "tslint": "^4.5.1",
+    "typescript": "^2.2.1"
   },
   "jest": {
     "preset": "react-native",
@@ -74,7 +82,7 @@
       "/__tests__/__setup__.js"
     ],
     "modulePaths": [
-      "src",
+      "build",
       "/node_modules/"
     ],
     "setupFiles": [

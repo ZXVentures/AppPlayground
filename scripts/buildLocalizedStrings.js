@@ -11,8 +11,8 @@ const fs = require('fs')
 const globSync = require('glob').sync
 const mkdirpSync = require('mkdirp').sync
 
-const filePattern = './intl/messages/**/*.json'
-const outputDir = './intl/locales/'
+const filePattern = './src/intl/messages/**/*.json'
+const outputDir = './src/intl/locales/'
 
 const messages = globSync(filePattern)
   .map((filename) => fs.readFileSync(filename, 'utf8'))
@@ -35,4 +35,4 @@ const defaultJson = JSON.stringify(JSON.parse(`{ "en": ${messagesJson} }`), null
 // This is what we send for translations
 fs.writeFileSync(outputDir + '_default.json', defaultJson, null, 2)
 // This is `en`, our default locale
-fs.writeFileSync(outputDir + 'default.js', `/* eslint-disable quotes */\nexport default ${messagesJson}\n`, null, 2)
+fs.writeFileSync(outputDir + 'default.tsx', `/* eslint-disable quotes */\nexport default ${messagesJson}\n`, null, 2)
