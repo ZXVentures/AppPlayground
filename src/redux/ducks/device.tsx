@@ -1,7 +1,6 @@
-/* @flow */
-
-interface DeviceState {
-  isReactNative: boolean
+export interface DeviceState {
+  isReactNative: boolean,
+  platform: string
 }
 
 const initialState = {

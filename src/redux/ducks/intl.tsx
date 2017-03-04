@@ -2,6 +2,10 @@ import { BasicAction } from '../../types'
 
 import messages from './lib/intl'
 
+export const SET_LOCALE = '@ratebeer/intl/SET_LOCALE'
+export const LOCALE_SHOULD_UPDATE = '@ratebeer/intl/LOCALE_SHOULD_UPDATE'
+export const LOCALE_DID_UPDATE = '@ratebeer/intl/LOCALE_DID_UPDATE'
+
 export interface SetLocaleAction {
   type: string,
   payload: {
@@ -30,12 +34,6 @@ export const initialState = {
   messages
 }
 Object.freeze(initialState)
-
-import {
-  SET_LOCALE,
-  LOCALE_SHOULD_UPDATE,
-  LOCALE_DID_UPDATE
-} from './constants'
 
 export default (state: IntlState = initialState, action?: BasicAction | SetLocaleAction): IntlState => {
   if (!action) return state

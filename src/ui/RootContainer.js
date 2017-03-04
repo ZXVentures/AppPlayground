@@ -1,5 +1,3 @@
-/* @flow */
-
 import React, { Component } from 'react' // eslint-disable-line no-unused-vars
 import { NavigationExperimental, Platform, BackAndroid } from 'react-native'
 

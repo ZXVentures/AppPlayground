@@ -1,5 +1,3 @@
-/* @flow */
-
 // React
 import React from 'react' // eslint-disable-line no-unused-vars
 import { AppRegistry, AsyncStorage, Platform } from 'react-native'

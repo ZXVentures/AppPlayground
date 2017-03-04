@@ -1,22 +1,12 @@
-/* @flow */
-
-import { NavState } from './nav'
-// import type { IntlState } from './intl'
-
-export interface ConfigState {
-  appName: string,
-  appVersion: string
-}
-
-export interface DeviceState {
-  isReactNative: boolean,
-  platform: string
-};
+import { NavState } from '../redux/ducks/nav'
+import { IntlState } from '../redux/ducks/intl'
+import { DeviceState } from '../redux/ducks/device'
+import { ConfigState } from '../redux/ducks/config'
 
 export type NativeState = {
   config: ConfigState,
   device: DeviceState,
-  // intl: IntlState,
+  intl: IntlState,
   apollo: Object,
   nav: NavState
 };
