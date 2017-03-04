@@ -1,1 +1,1 @@
-export type BasicAction = { type: String }
+export type BasicAction = { type: string }

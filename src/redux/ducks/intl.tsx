@@ -1,12 +1,26 @@
-/* @flow */
-
-import type {
-  IntlState,
-  SupportedLocale,
-  Action
-} from '../../types'
+import { BasicAction } from '../../types'
 
 import messages from './lib/intl'
+
+export interface SetLocaleAction {
+  type: string,
+  payload: {
+    locale: string
+  }
+}
+
+const isSetLocaleAction = (action: any): action is SetLocaleAction => {
+  return action.payload !== undefined
+  && action.payload.locale !== undefined
+}
+
+export interface IntlState {
+  defaultLocale: string,
+  currentLocale: string,
+  supportedLocales: string[],
+  isDirty: boolean,
+  messages: { [key: string]: { [key: string]: string } }
+}
 
 export const initialState = {
   defaultLocale: 'en',
@@ -23,12 +37,15 @@ import {
   LOCALE_DID_UPDATE
 } from './constants'
 
-export default (state: IntlState = initialState, action?: Action): IntlState => {
+export default (state: IntlState = initialState, action?: BasicAction | SetLocaleAction): IntlState => {
   if (!action) return state
 
   switch (action.type) {
 
   case SET_LOCALE:
+    if (!isSetLocaleAction(action)) return state
+    if (state.supportedLocales.indexOf(action.payload.locale) === -1) return state
+
     return {
       ...state,
       currentLocale: action.payload.locale
@@ -50,11 +67,11 @@ export default (state: IntlState = initialState, action?: Action): IntlState => 
   }
 }
 
-export const setLocale = (locale: SupportedLocale): Action => ({
+export const setLocale = (locale: string): SetLocaleAction => ({
   type: SET_LOCALE,
   payload: { locale }
 })
 
-export const localeShouldUpdate = (): Action => ({ type: LOCALE_SHOULD_UPDATE })
+export const localeShouldUpdate = (): BasicAction => ({ type: LOCALE_SHOULD_UPDATE })
 
-export const localeDidUpdate = (): Action => ({ type: LOCALE_DID_UPDATE })
+export const localeDidUpdate = (): BasicAction => ({ type: LOCALE_DID_UPDATE })

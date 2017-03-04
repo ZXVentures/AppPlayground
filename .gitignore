@@ -55,3 +55,5 @@ fastlane/screenshots
 coverage/
 
 flow-typed/npm
+
+build/
